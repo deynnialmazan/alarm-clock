@@ -46,17 +46,16 @@ function setAlarm() {
   const [hours, minutes] = inputTime.split(":");
 
   // Create a new date object
-  const alarmTime = new Date();
-  alarmTime.setHours(hours);
-  alarmTime.setMinutes(minutes);
-  alarmTime.setSeconds(0);
+  const newalarmTime = new Date();
+  newalarmTime.setHours(hours);
+  newalarmTime.setMinutes(minutes);
+  newalarmTime.setSeconds(0);
 
   // Calculate the number of milliseconds until the alarm should go off
-  const timeUntilAlarm = alarmTime.getTime() - Date.now();
+  const timeUntilAlarm = newalarmTime.getTime() - Date.now();
 
   // Set a timeout that will go off when the alarm should go off
   setTimeout(() => {
-    alert("Alarm!");
     alarmSound.play();
   }, timeUntilAlarm);
 }
