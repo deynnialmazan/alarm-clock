@@ -1,0 +1,123 @@
+@import url(./reset.css);
+
+:root {
+    --app-dark-bg: #1a1d28;
+    --app-medium-gray-: #949494;
+    --app-light-gray: #f9f9f9;
+    --app-green: #33ab4e;
+    --app-purple: #833cff;
+    --app-orange: #ff833c;
+    --app-blue: #3c57ff;
+    --app-blue-hover: #364ee6;
+    --app-red: #ff3c57;
+    --app-red-hover: #ff2846;
+    --app-yellow-hover: #ffff1c;
+    --app-orange-text: #ff8e1c;
+  }
+  
+
+/*------------------------------*/
+/* Main                         */
+/*------------------------------*/
+  
+body {
+    background-color: var(--app-dark-bg);
+    margin-inline: auto;
+    vertical-align: middle;
+
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    text-align: center; 
+    place-items: center
+}
+
+
+.container {
+    width: min(100% - 30px, 1280px);
+    display: grid;
+    margin-inline: auto;
+    height: 300px;
+    text-align: center; 
+    place-items: center;   
+  }
+  
+
+.clock {
+    width: 600px;
+    height: 100px;
+    border-radius: 4px;
+    font-size: 90px;
+    color: var(--app-light-gray);
+    padding: auto;
+  }
+
+  .output {
+    width: 120px;
+    height: 52px;
+    border-radius: 4px;
+    background: url(../images/bell.png) no-repeat 16px 50%;
+    background-size: 14px;
+    visibility: hidden;
+    color: var(--app-light-gray);
+    line-height: 52px;
+    margin-top: 15px;
+  }
+  
+ 
+  .input-form {
+    margin-top: 20px;
+  }
+
+  input[type=text].alarm-time {
+    width: 140px;
+    height: 45px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    padding: 0 15px;
+    border: 1px solid rgb(255 255 255 / 0.1); 
+    background-color: rgb(255 255 255 / 0.1);
+    font-size: 17px;
+    color: var(--app-medium-gray-);
+    margin-top: 10px;
+  }
+  
+  input[type=button] {
+    width: 140px;
+    height: 45px;
+    text-align: center;
+    background-color: var(--app-purple);
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+  }
+
+  input + input {
+    margin-left: 20px;
+  }
+  
+
+  input[type=button]:hover {
+  background-color: var(--app-red);
+  }
+  
+  .feedback {
+    width: 600px;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    color: var(--app-light-gray);
+    background-size: 14px;
+  }
+ 
