@@ -8,6 +8,7 @@ const feedback = document.querySelector('.feedback');
 
 const alarmSound = new Audio('./sounds/alarm.mp3');
 alarmSound.type = 'audio/mp3';
+alarmSound.loop = true;
 
 
 //Display time
@@ -17,7 +18,6 @@ function clock() {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
     clockDisplay.innerText = (`${hours}:${minutes}:${seconds}`);
-
  }
 
 let timerId = setInterval(clock, 1000);  // Executed every 1000 milliseconds = 1 second
@@ -57,13 +57,20 @@ function setAlarm() {
   // Set a timeout that will go off when the alarm should go off
   setTimeout(() => {
     alarmSound.play();
+    
+    const stopAlarm = setTimeout(() => {
+      alarmSound.pause();
+    }, 60000); // Stop after 1 minute in milliseconds
   }, timeUntilAlarm);
 }
 
 setAlarmBtn.addEventListener('click', () => {
   validateTime(alarmTime);
   setAlarm();
+  
 });
+
+
   
 
 
