@@ -60,14 +60,13 @@ function setAlarm() {
     
     const stopAlarm = setTimeout(() => {
       alarmSound.pause();
-    }, 60000); // Stop after 1 minute in milliseconds
+    }, 60000); // Stop alarmSound after 1 minute in milliseconds
   }, timeUntilAlarm);
 }
 
 setAlarmBtn.addEventListener('click', () => {
   validateTime(alarmTime);
   setAlarm();
-  
 });
 
 
